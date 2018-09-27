@@ -20,7 +20,7 @@ deploy:
     secure: "$AWS_SECRET_KEY"
   region: "us-east-1"  
   app: "backend-kernell-challenge"
-  env: "backend-kernell-challenge-dev"
+  env: "backend-kernell-challenge-env"
   bucket_name: "kernel-challenge-deploy"
   on:
     branch: master
