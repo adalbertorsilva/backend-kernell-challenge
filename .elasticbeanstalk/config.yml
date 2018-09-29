@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: backend-kernell-challenge-env
+    environment: test-env
 global:
   application_name: backend-kernell-challenge
   default_platform: Docker 18.06.1-ce
