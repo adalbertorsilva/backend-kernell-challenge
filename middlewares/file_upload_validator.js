@@ -1,6 +1,6 @@
 const autoBind = require('auto-bind')
 const { validate } = require('joi')
-const { file: fileSchema } = require('../schemas')
+const { file_upload: fileUploadSchema } = require('../schemas')
 
 class FileValidator {
   constructor () {
@@ -17,7 +17,7 @@ class FileValidator {
   }
 
   validateFile (file) {
-    validate(file, fileSchema)
+    validate(file, fileUploadSchema)
   }
 }
 

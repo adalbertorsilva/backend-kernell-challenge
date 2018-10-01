@@ -28,6 +28,21 @@ class S3Client {
 
     return this.s3.listObjects(listParams).promise()
   }
+
+  async update (file) {
+    const deleteParams = {
+      Key: file.name,
+      Bucket: process.env.AWS_BUCKET
+    }
+
+    const uploadParams = {
+      Key: file.updateName,
+      Bucket: process.env.AWS_BUCKET,
+      Body: Buffer.from(file.buffer)
+    }
+
+    await Promise.all([this.s3.deleteObject(deleteParams).promise(), this.s3.upload(uploadParams).promise()])
+  }
 }
 
 module.exports = new S3Client()
